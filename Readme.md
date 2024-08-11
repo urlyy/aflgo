@@ -1,3 +1,4 @@
+PS: update some code to ensure run `Getting Started` successfully.
 # AFLGo: Directed Greybox Fuzzing
 <a href="https://mboehme.github.io/paper/CCS17.pdf" target="_blank"><img src="https://github.com/mboehme/mboehme.github.io/blob/master/paper/CCS17.png" align="right" width="250"></a>
 AFLGo is an extension of <a href="https://lcamtuf.coredump.cx/afl/" target="_blank">American Fuzzy Lop (AFL)</a>.

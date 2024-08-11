@@ -34,15 +34,18 @@ mkdir -p llvm_tools
 
 pushd llvm_tools
 
-wget -O llvm-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/llvm-11.0.0.src.tar.xz
+# wget -O llvm-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/llvm-11.0.0.src.tar.xz
+cp ../llvm-11.0.0.src.tar.xz ./
 tar -xf llvm-11.0.0.src.tar.xz
 mv      llvm-11.0.0.src        llvm
 
-wget -O  clang-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang-11.0.0.src.tar.xz
+# wget -O  clang-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang-11.0.0.src.tar.xz
+cp ../clang-11.0.0.src.tar.xz ./
 tar -xf  clang-11.0.0.src.tar.xz
 mv       clang-11.0.0.src        clang
 
-wget -O compiler-rt-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/compiler-rt-11.0.0.src.tar.xz
+# wget -O compiler-rt-11.0.0.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/compiler-rt-11.0.0.src.tar.xz
+cp ../compiler-rt-11.0.0.src.tar.xz ./
 tar -xf compiler-rt-11.0.0.src.tar.xz
 mv      compiler-rt-11.0.0.src        compiler-rt
 
@@ -103,7 +106,7 @@ case `python3 -c 'import sys; print(sys.version_info[:][1])'` in
     *)
         python3 -m pip install networkx;;
 esac
-python3 -m pip install pydot pydotplus
+python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pydot pydotplus 
 
 ##############################
 ### Build AFLGo components ###
