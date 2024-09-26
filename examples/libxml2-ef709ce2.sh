@@ -17,6 +17,7 @@ export ADDITIONAL="-targets=$TMP_DIR/BBtargets.txt -outdir=$TMP_DIR -flto -fuse-
 git diff -U0 HEAD^ HEAD > $TMP_DIR/commit.diff
 # wget https://raw.githubusercontent.com/jay/showlinenum/develop/showlinenum.awk
 cp $LINENUM ./
+LINENUM=$PWD/showlinenum.awk
 chmod +x $LINENUM
 mv $LINENUM $TMP_DIR
 cat $TMP_DIR/commit.diff |  $TMP_DIR/showlinenum.awk show_header=0 path=1 | grep -e "\.[ch]:[0-9]*:+" -e "\.cpp:[0-9]*:+" -e "\.cc:[0-9]*:+" | cut -d+ -f1 | rev | cut -c2- | rev > $TMP_DIR/BBtargets.txt
